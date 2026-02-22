@@ -29,7 +29,7 @@
     </style>
 </head>
 
-<body class="min-h-screen w-11/12 md:w-10/12 mx-auto  bg-slate-100 ">
+<body class="min-h-screen w-5/6 md:w-4/6 mx-auto  bg-slate-100 ">
 
     <header class="py-10">
         <div class="w-full">
@@ -55,10 +55,15 @@
         </div>
     </header>
 
-    <main class="">
-        <h1 class="text-2xl font-bold"> Available Jobs</h1>
+    <main class="border-4">
+        <div class="flex justify-between">
+            <h1 class="text-2xl font-bold"> Available Jobs</h1>
+            <h3><span id="totaJob2"></span> jobs</h3>
+        </div>
 
-        <section class="border-4 border-blue-500 mt-5">
+
+        <!-- Available Jobs Button -->
+        <div class=" mt-5">
             <div class=" flex flex-wrap gap-2">
                 <button
                     class="btn  btn-active btn-primary btn-soft flex-1 md:flex-none px-10 w-[80px]  js-btnJob">All</button>
@@ -67,75 +72,91 @@
                 <button
                     class="btn  btn-primary btn-soft px-10 w-[80px] flex-1 md:flex-none  js-btnJob">Rejected</button>
             </div>
+        </div>
 
-            <div class=" bg-white  p-5 js-jobs ">
+        <!-- Available Jobs section -->
+        <section id="show-all-jobs" class="space-y-5 border-2">
+            <div class=" bg-white  p-5 rounded-lg">
                 <div class="flex justify-between">
                     <div>
                         <h1 class="text-2xl font-bold">Mobile First Corp</h1>
                         <h2 class="text-[18px] text-gray-500">React Native Developer</h2>
                     </div>
 
-                    <button class="w-10 h-10 rounded-full border border-gray-300 cursor-pointer">
+                    <button class="w-10 h-10 rounded-full border border-gray-300 cursor-pointer js-btn-remove">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
                 </div>
                 <br>
-                <p>Remote • Full-time • $130,000 - $175,000</p>
+                <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
                 <br>
                 <span>
                     <!-- <button class="btn">INTERVIEW</button> -->
                 </span>
-                <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
+                <p class="text-gray-500">Build cross-platform mobile applications using React Native. Work on products
+                    used by millions of
                     users worldwide.</p>
                 <div class="flex flex-col sm:flex-row gap-2 mt-4">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="btn btn-outline btn-accent js-add-interview">INTERVIEW</button>
+                    <button class="btn btn-outline btn-secondary js add-rejected">REJECTED</button>
                 </div>
             </div>
-<div class=" bg-white  p-5 js-jobs ">
+
+            <div class=" bg-white  p-5  rounded-lg">
                 <div class="flex justify-between">
                     <div>
-                        <h1 class="text-2xl font-bold">Mobile First Corp</h1>
-                        <h2 class="text-[18px] text-gray-500">React Native Developer</h2>
+                        <h1 class="text-2xl font-bold">WebFlow Agency</h1>
+                        <h2 class="text-[18px] text-gray-500">Web Designer & Developer</h2>
                     </div>
 
-                    <button class="w-10 h-10 rounded-full border border-gray-300 cursor-pointer">
+                    <button class="w-10 h-10 rounded-full border border-gray-300 cursor-pointer js-btn-remove">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
                 </div>
                 <br>
-                <p>Remote • Full-time • $130,000 - $175,000</p>
+                <p class="text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000 </p>
                 <br>
                 <span>
                     <!-- <button class="btn">INTERVIEW</button> -->
                 </span>
-                <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
-                    users worldwide.</p>
+                <p class="text-gray-500">Create stunning web experiences for high-profile clients. Must have portfolio
+                    and experience with
+                    modern web design trends.</p>
                 <div class="flex flex-col sm:flex-row gap-2 mt-4">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="btn btn-outline btn-accent js-add-interview">INTERVIEW</button>
+                    <button class="btn btn-outline btn-secondary js add-rejected">REJECTED</button>
                 </div>
             </div>
 
         </section>
+
+
+        <!-- Interview Section -->
+        <section id="empty-job">
+            <div class="flex flex-col items-center p-20 ">
+                <img src="jobs.png" alt="" class="w-[45px] h-[58px]">
+                <h1 class="text-xl font-bold ">No jobs available</h1>
+                <p class="text-gray-500">Check back soon for new job opportunities</p>
+            </div>
+        </section>
+
+        <!-- Show All Interview section -->
+        <section id="show-interview" class="">
+
+        </section>
+
+        <!-- Show All Rejected section -->
+
+        <section id="show-rejected" class="">
+
+        </section>
     </main>
 
-    <script>
-
-        const btnJobs = document.querySelectorAll(".js-btnJob");
 
 
-        for (let btnJob of btnJobs) {
-            btnJob.addEventListener("click", function (event) {
-
-                for (let btn of btnJobs) {
-                    btn.classList.remove("btn-active")
-                }
-                event.target.classList.add("btn-active")
-            })
-        }
-    </script>
-
+    <script src="jobs.js"></script>
+    <script src="interview.js"></script>
+    <script src="reject.js"></script>
 </body>
 
 </html>
