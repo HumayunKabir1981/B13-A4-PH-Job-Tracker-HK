@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- DaisyUI and Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>PH-Job-Tracker</title>
+    <style>
+        * {
+            font-family: "Open Sans", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen max-w-3/5 mx-auto  bg-slate-50 ">
+
+    <header class="py-10">
+        <div class="w-full">
+            <h1 class="text-3xl font-bold"> Job Application Tracker</h1>
+
+            <div class="grid grid-cols-3 gap-3 mt-3">
+                <div class="py-3 pl-3 bg-white ">
+                    <p>Total</p>
+
+                    <span id="totaJob" class="text-xl font-bold">0</span>
+                </div>
+                <div class="py-3 py-3 bg-white  bg-white ">
+                    <p>Interview</p>
+
+                    <span id="interviewJob" class="text-green-500 text-xl font-bold">0</span>
+                </div>
+                <div class="py-3 py-3 bg-white  bg-white ">
+                    <p>Rejected</p>
+
+                    <span id="rejectedJob" class="text-red-500 text-xl font-bold">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="">
+        <h1 class="text-2xl font-bold"> Available Jobs</h1>
+        <section class="border-2 border-blue-500 mt-5">
+            <div id="btnJob-container">
+                <button class="btn  btn-active btn-primary btn-soft px-10 js-btnJob">All</button>
+                <button class="btn  btn-primary btn-soft px-10 js-btnJob">Interview</button>
+                <button class="btn  btn-primary btn-soft px-10 js-btnJob">Rejected</button>
+            </div>
+            <div class="jobs">
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        const btnJobs = document.querySelectorAll(".js-btnJob");
+        // console.log(btnJobs)
+
+        for (let btnJob of btnJobs) {
+            btnJob.addEventListener("click", function (event) {
+
+                for (let btn of btnJobs) {
+                    btn.classList.remove("btn-active")
+                }
+                event.target.classList.add("btn-active")
+            })
+        }
+    </script>
+
+</body>
+
+</html>
