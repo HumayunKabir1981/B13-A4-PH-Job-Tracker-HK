@@ -65,18 +65,18 @@
         <!-- Available Jobs Button -->
         <div class=" mt-5">
             <div class=" flex flex-wrap gap-2">
-                <button 
+                <button
                     class="btn  btn-active btn-primary btn-soft flex-1 md:flex-none px-10 w-[80px]  js-btnJob">All</button>
-                <button 
+                <button
                     class="btn  btn-primary btn-soft flex-1 md:flex-none px-10 w-[80px] js-btnJob">Interview</button>
-                <button 
+                <button
                     class="btn  btn-primary btn-soft px-10 w-[80px] flex-1 md:flex-none  js-btnJob">Rejected</button>
             </div>
         </div>
 
         <!-- Available Jobs section -->
-        <section  class="space-y-5 border-2 js-Section">
-            <div class=" bg-white  p-5 rounded-lg">
+        <section class="space-y-5 border-2 js-Section">
+            <div class=" bg-white  p-5 rounded-lg js-jobCard">
                 <div class="flex justify-between">
                     <div>
                         <h1 class="text-2xl font-bold">Mobile First Corp</h1>
@@ -90,7 +90,7 @@
                 <br>
                 <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
                 <br>
-                <span>
+                <span class="ribon">
                     <!-- <button class="btn">INTERVIEW</button> -->
                 </span>
                 <p class="text-gray-500">Build cross-platform mobile applications using React Native. Work on products
@@ -98,11 +98,11 @@
                     users worldwide.</p>
                 <div class="flex flex-col sm:flex-row gap-2 mt-4">
                     <button class="btn btn-outline btn-accent js-add-interview">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary js add-rejected">REJECTED</button>
+                    <button class="btn btn-outline btn-secondary js-add-rejected">REJECTED</button>
                 </div>
             </div>
 
-            <div class=" bg-white  p-5  rounded-lg">
+            <div class=" bg-white  p-5  rounded-lg js-jobCard">
                 <div class="flex justify-between">
                     <div>
                         <h1 class="text-2xl font-bold">WebFlow Agency</h1>
@@ -116,7 +116,7 @@
                 <br>
                 <p class="text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000 </p>
                 <br>
-                <span>
+                <span class="ribon">
                     <!-- <button class="btn">INTERVIEW</button> -->
                 </span>
                 <p class="text-gray-500">Create stunning web experiences for high-profile clients. Must have portfolio
@@ -124,9 +124,36 @@
                     modern web design trends.</p>
                 <div class="flex flex-col sm:flex-row gap-2 mt-4">
                     <button class="btn btn-outline btn-accent js-add-interview">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary js add-rejected">REJECTED</button>
+                    <button class="btn btn-outline btn-secondary js-add-rejected">REJECTED</button>
                 </div>
             </div>
+
+             <div class=" bg-white  p-5  rounded-lg js-jobCard">
+                <div class="flex justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold">WebFlow Agency</h1>
+                        <h2 class="text-[18px] text-gray-500">Web Designer & Developer</h2>
+                    </div>
+
+                    <button class="w-10 h-10 rounded-full border border-gray-300 cursor-pointer js-btn-remove">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                </div>
+                <br>
+                <p class="text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000 </p>
+                <br>
+                <span class="ribon">
+                    <!-- <button class="btn">INTERVIEW</button> -->
+                </span>
+                <p class="text-gray-500">Create stunning web experiences for high-profile clients. Must have portfolio
+                    and experience with
+                    modern web design trends.</p>
+                <div class="flex flex-col sm:flex-row gap-2 mt-4">
+                    <button class="btn btn-outline btn-accent js-add-interview">INTERVIEW</button>
+                    <button class="btn btn-outline btn-secondary js-add-rejected">REJECTED</button>
+                </div>
+            </div>
+
 
         </section>
 
@@ -141,14 +168,15 @@
         </section>
 
         <!-- Show All Interview section -->
-        <section  class="js-Section">
-
+        <section class="js-Section hidden" id="interview-Section">
+            
+            </h1>
         </section>
 
         <!-- Show All Rejected section -->
 
-        <section  class="js-Section">
-
+        <section class="js-Section hidden" id="rejected-Section">
+           
         </section>
     </main>
 
@@ -157,8 +185,13 @@
     <script src="machin.js"></script>
 
     <script src="jobs.js"></script>
-    <script src="interview.js"></script>
+    <script src="intrejview.js"></script>
     <script src="reject.js"></script>
+
+
+    <script>
+
+    </script>
 </body>
 
 </html>

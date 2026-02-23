@@ -1,3 +1,6 @@
+
+
+
 //   Available jobs Button code
 
 const sections = document.querySelectorAll(".js-Section");
@@ -6,28 +9,6 @@ const btnJobs = document.querySelectorAll(".js-btnJob");
 const interviewJobCount = document.getElementById("interviewJob");
 const rejectedJobCount = document.getElementById("rejectedJob");
 
-// for (let btnJob of btnJobs) {
-//     btnJob.addEventListener("click", function (event) {
-
-//         for (let btn of btnJobs) {
-//             btn.classList.remove("btn-active")
-//         }
-//         event.target.classList.add("btn-active");
-//     })
-// }
-
-function btnActiveShowSection(btnActive, sectionShow) {
-
-    for (section of sections) {
-        section.classList.add("hidden");
-    }
-
-    for (btnJob of btnJobs) {
-        btnJob.classList.remove("btn-active")
-    }
-    btnActive.classList.add("btn-active");
-    sections[sectionShow].classList.remove("hidden");
-}
 
 btnJobs[0].addEventListener("click", function (event) {
     btnActiveShowSection(event.target, 0); 
@@ -54,7 +35,6 @@ btnJobs[2].addEventListener("click", function (event) {
 
 
 
-
 // Job Delete code
 
 const removeBtns = document.getElementsByClassName("js-btn-remove");
@@ -72,4 +52,8 @@ for (let removeBtn of removeBtns) {
         totalJob2.innerText = removeBtns.length;
     })
 }
+
+
+
+
 

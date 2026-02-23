@@ -1,22 +1,23 @@
-function showOnly(id) {
-    const showAllJobs = document.getElementById('show-all-jobs');
-    const emptyJob = document.getElementById('empty-job');
-    const showInterview = document.getElementById('show-interview');
-    const showRejected = document.getElementById('show-rejected');
 
-    showAllJobs.classList.add("hidden");
-    emptyJob.classList.add("hidden");
-    showInterview.classList.add("hidden");
-    showRejected.classList.add("hidden");
+function btnActiveShowSection(btnActive, sectionShow) {
 
-    const intJobCount = document.getElementById('interviewJob').innerText;
-    const intRecectCount = document.getElementById('rejectedJob').innerText;
+    for (section of sections) {
+        section.classList.add("hidden");
+    }
 
-   
+    for (btnJob of btnJobs) {
+        btnJob.classList.remove("btn-active")
+    }
+    btnActive.classList.add("btn-active");
+    sections[sectionShow].classList.remove("hidden");
+}
 
-        const show = document.getElementById(id);
-        show.classList.remove("hidden");
+// কাউন্টার আপডেট করার ফাংশন
+function updateCounters() {
+    // ইন্টারভিউ সেকশনে কয়টি .bg-white কার্ড আছে তা গুনে দেখা (হেডিং বাদ দিয়ে)
+    const intCount = interviewSection.querySelectorAll('.bg-white').length;
+    interviewCountDisplay.innerText = intCount;
 
-   
-
+    const rejCount = rejectedSection.querySelectorAll('.bg-white').length;
+    rejectedCountDisplay.innerText = rejCount;
 }
