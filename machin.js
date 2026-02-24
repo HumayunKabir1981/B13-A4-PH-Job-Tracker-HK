@@ -22,6 +22,5 @@ function updateCounters() {
 }
 
 
-// const con=document.querySelector('#job-card-section');
-// const divcount=con.querySelectorAll(':scope >.js-jobCard').length
+
 

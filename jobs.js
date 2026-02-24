@@ -1,4 +1,12 @@
 
+const con = document.querySelector('#job-card-section');
+const divcount = con.querySelectorAll(':scope >.js-jobCard').length
+
+const totalJob = document.getElementById("totaJob");
+const totalJob2 = document.getElementById("totaJob2");
+totalJob.innerText = divcount;
+totalJob2.innerText = divcount;
+
 
 //   Available jobs Button code
 
@@ -14,6 +22,10 @@ const tJobIntv = document.getElementById("totaJob2");
 btnJobs[0].addEventListener("click", function (event) {
     btnActiveShowSection(event.target, 0);
 
+    const con = document.querySelector('#job-card-section');
+    const divcount = con.querySelectorAll(':scope >.js-jobCard').length
+    totalJob2.innerText = divcount;
+
 });
 
 btnJobs[1].addEventListener("click", function (event) {
@@ -24,8 +36,11 @@ btnJobs[1].addEventListener("click", function (event) {
     } else {
         btnActiveShowSection(event.target, 2);
     }
-    intRibon.innerText = updateCounters();
-    tJobIntv.innerText = updateCounters();
+
+    const intvSections = document.querySelector('#interview-Section');
+    const intvDivcount = intvSections.querySelectorAll(':scope >.js-jobCard').length
+
+    totalJob2.innerText = intvDivcount;
 
 });
 
@@ -36,6 +51,11 @@ btnJobs[2].addEventListener("click", function (event) {
     } else {
         btnActiveShowSection(event.target, 3);
     }
+
+     const rejtSections = document.querySelector('#rejected-Section');
+    const rejtDivcount = rejtSections.querySelectorAll(':scope >.js-jobCard').length
+
+    totalJob2.innerText = rejtDivcount;
 });
 
 
@@ -43,17 +63,8 @@ btnJobs[2].addEventListener("click", function (event) {
 
 // Job Delete code
 
-const con = document.querySelector('#job-card-section');
-const divcount = con.querySelectorAll(':scope >.js-jobCard').length
-console.log(divcount);
-
 
 const removeBtns = document.getElementsByClassName("js-btn-remove");
-
-const totalJob = document.getElementById("totaJob");
-const totalJob2 = document.getElementById("totaJob2");
-totalJob.innerText = divcount;
-totalJob2.innerText = divcount;
 
 for (let removeBtn of removeBtns) {
 
