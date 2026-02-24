@@ -47,8 +47,9 @@ totalJob2.innerText = removeBtns.length;
 for (let removeBtn of removeBtns) {
 
     removeBtn.addEventListener("click", function (event) {
-        const removeJob = event.target.parentNode.parentNode.parentNode;
+        const removeJob = event.target.closest('.js-jobCard');       
         removeJob.parentNode.removeChild(removeJob);
+
         totalJob.innerText = removeBtns.length;
         totalJob2.innerText = removeBtns.length;
     })
