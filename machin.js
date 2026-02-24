@@ -14,9 +14,9 @@ function btnActiveShowSection(btnActive, sectionShow) {
 
 
 function updateCounters() {   
-    const intCount = interviewSection.querySelectorAll('.bg-white').length;
+    const intCount = interviewSection.querySelectorAll('.js-jobCard').length;
     interviewCountDisplay.innerText = intCount;
 
-    const rejCount = rejectedSection.querySelectorAll('.bg-white').length;
+    const rejCount = rejectedSection.querySelectorAll('.js-jobCard').length;
     rejectedCountDisplay.innerText = rejCount;
 }
