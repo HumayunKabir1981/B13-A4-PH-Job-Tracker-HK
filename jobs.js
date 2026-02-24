@@ -8,28 +8,33 @@ const btnJobs = document.querySelectorAll(".js-btnJob");
 const interviewJobCount = document.getElementById("interviewJob");
 const rejectedJobCount = document.getElementById("rejectedJob");
 const intRibon = document.getElementById("int-rebon");
+const tJobIntv = document.getElementById("totaJob2");
+
 
 btnJobs[0].addEventListener("click", function (event) {
-    btnActiveShowSection(event.target, 0); 
-   
+    btnActiveShowSection(event.target, 0);
+
 });
 
 btnJobs[1].addEventListener("click", function (event) {
-     const value = parseInt(interviewJobCount.innerText);
+    const value = parseInt(interviewJobCount.innerText);
     if (value === 0) {
-        btnActiveShowSection(event.target, 1); 
+        btnActiveShowSection(event.target, 1);
+
     } else {
-        btnActiveShowSection(event.target, 2); 
+        btnActiveShowSection(event.target, 2);
     }
-   intRibon.innerText=updateCounters();
+    intRibon.innerText = updateCounters();
+    tJobIntv.innerText = updateCounters();
+
 });
 
 btnJobs[2].addEventListener("click", function (event) {
-     const value = parseInt(rejectedJobCount.innerText);
+    const value = parseInt(rejectedJobCount.innerText);
     if (value === 0) {
-        btnActiveShowSection(event.target, 1); 
+        btnActiveShowSection(event.target, 1);
     } else {
-        btnActiveShowSection(event.target, 3); 
+        btnActiveShowSection(event.target, 3);
     }
 });
 
@@ -38,20 +43,29 @@ btnJobs[2].addEventListener("click", function (event) {
 
 // Job Delete code
 
+const con = document.querySelector('#job-card-section');
+const divcount = con.querySelectorAll(':scope >.js-jobCard').length
+console.log(divcount);
+
+
 const removeBtns = document.getElementsByClassName("js-btn-remove");
+
 const totalJob = document.getElementById("totaJob");
 const totalJob2 = document.getElementById("totaJob2");
-totalJob.innerText = removeBtns.length;
-totalJob2.innerText = removeBtns.length;
+totalJob.innerText = divcount;
+totalJob2.innerText = divcount;
 
 for (let removeBtn of removeBtns) {
 
     removeBtn.addEventListener("click", function (event) {
-        const removeJob = event.target.closest('.js-jobCard');       
+        const removeJob = event.target.closest('.js-jobCard');
         removeJob.parentNode.removeChild(removeJob);
 
-        totalJob.innerText = removeBtns.length;
-        totalJob2.innerText = removeBtns.length;
+        const con = document.querySelector('#job-card-section');
+        const divcount = con.querySelectorAll(':scope >.js-jobCard').length
+
+        totalJob.innerText = divcount;
+        totalJob2.innerText = divcount;
     })
 }
 

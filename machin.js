@@ -20,3 +20,8 @@ function updateCounters() {
     const rejCount = rejectedSection.querySelectorAll('.js-jobCard').length;
     rejectedCountDisplay.innerText = rejCount;
 }
+
+
+// const con=document.querySelector('#job-card-section');
+// const divcount=con.querySelectorAll(':scope >.js-jobCard').length
+
