@@ -37,10 +37,14 @@ btnJobs[1].addEventListener("click", function (event) {
         btnActiveShowSection(event.target, 2);
     }
 
+    const con = document.querySelector('#job-card-section');
+    const divcount2 = con.querySelectorAll(':scope >.js-jobCard').length
+
     const intvSections = document.querySelector('#interview-Section');
     const intvDivcount = intvSections.querySelectorAll(':scope >.js-jobCard').length
+    const showintvDivcount = intvDivcount + " of " + divcount2
 
-    totalJob2.innerText = intvDivcount;
+    totalJob2.innerText = showintvDivcount;
 
 });
 
@@ -52,10 +56,15 @@ btnJobs[2].addEventListener("click", function (event) {
         btnActiveShowSection(event.target, 3);
     }
 
-     const rejtSections = document.querySelector('#rejected-Section');
+    const con = document.querySelector('#job-card-section');
+    const divcount3 = con.querySelectorAll(':scope >.js-jobCard').length
+
+    const rejtSections = document.querySelector('#rejected-Section');
     const rejtDivcount = rejtSections.querySelectorAll(':scope >.js-jobCard').length
 
-    totalJob2.innerText = rejtDivcount;
+    const showrejtDivcount = rejtDivcount + " of " + divcount3
+
+    totalJob2.innerText = showrejtDivcount;
 });
 
 
@@ -77,6 +86,9 @@ for (let removeBtn of removeBtns) {
 
         totalJob.innerText = divcount;
         totalJob2.innerText = divcount;
+
+  
+
     })
 }
 
