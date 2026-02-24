@@ -72,7 +72,6 @@ btnJobs[2].addEventListener("click", function (event) {
 
 // Job Delete code
 
-
 const removeBtns = document.getElementsByClassName("js-btn-remove");
 
 for (let removeBtn of removeBtns) {
