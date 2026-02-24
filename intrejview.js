@@ -5,18 +5,20 @@ const interviewCountDisplay = document.getElementById('interviewJob');
 const rejectedCountDisplay = document.getElementById('rejectedJob');
 
 
-function updateCounters() {
+// function updateCounters() {
 
-    const intCount = interviewSection.querySelectorAll('.js-jobCard').length;
-    interviewCountDisplay.innerText = intCount;
+//     const intCount = interviewSection.querySelectorAll('.js-jobCard').length;
+//     interviewCountDisplay.innerText = intCount;
 
-    const rejCount = rejectedSection.querySelectorAll('.js-jobCard').length;
-    rejectedCountDisplay.innerText = rejCount;
-}
+//     const rejCount = rejectedSection.querySelectorAll('.js-jobCard').length;
+//     rejectedCountDisplay.innerText = rejCount;
+// }
 
 
 // Interview Section
 const interviewSection = document.getElementById('interview-Section');
+
+
 const btnInterviewSections = document.getElementsByClassName("js-add-interview");
 for (let btn of btnInterviewSections) {
     btn.addEventListener("click", function (event) {
@@ -43,7 +45,6 @@ for (let btn of btnRejectSections) {
         ribon.innerHTML = `<button class="btn btn-outline btn-secondary ">REJECTED</button>`;
 
         const jobCardClone = jobCard.cloneNode(true);
-
 
         rejectSection.appendChild(jobCardClone);
         updateCounters();
@@ -74,16 +75,12 @@ document.addEventListener('click', function (event) {
             rejectedSection.appendChild(card);
             updateCounters();
         }
-
     }
-
 
     if (event.target.classList.contains('js-add-interview') || event.target.innerText === 'INTERVIEW') {
         const card = event.target.closest('.js-jobCard');
 
       
-
-
         if (interviewSection.contains(card)) {
             rejectedSection.appendChild(card);
             updateCounters();

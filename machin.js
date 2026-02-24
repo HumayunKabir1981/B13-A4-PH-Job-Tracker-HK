@@ -12,9 +12,8 @@ function btnActiveShowSection(btnActive, sectionShow) {
     sections[sectionShow].classList.remove("hidden");
 }
 
-// কাউন্টার আপডেট করার ফাংশন
-function updateCounters() {
-    // ইন্টারভিউ সেকশনে কয়টি .bg-white কার্ড আছে তা গুনে দেখা (হেডিং বাদ দিয়ে)
+
+function updateCounters() {   
     const intCount = interviewSection.querySelectorAll('.bg-white').length;
     interviewCountDisplay.innerText = intCount;
 

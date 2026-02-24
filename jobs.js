@@ -1,6 +1,5 @@
 
 
-
 //   Available jobs Button code
 
 const sections = document.querySelectorAll(".js-Section");
@@ -8,10 +7,11 @@ const btnJobs = document.querySelectorAll(".js-btnJob");
 
 const interviewJobCount = document.getElementById("interviewJob");
 const rejectedJobCount = document.getElementById("rejectedJob");
-
+const intRibon = document.getElementById("int-rebon");
 
 btnJobs[0].addEventListener("click", function (event) {
     btnActiveShowSection(event.target, 0); 
+   
 });
 
 btnJobs[1].addEventListener("click", function (event) {
@@ -21,6 +21,7 @@ btnJobs[1].addEventListener("click", function (event) {
     } else {
         btnActiveShowSection(event.target, 2); 
     }
+   intRibon.innerText=updateCounters();
 });
 
 btnJobs[2].addEventListener("click", function (event) {
